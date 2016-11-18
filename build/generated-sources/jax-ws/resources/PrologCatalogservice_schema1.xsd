@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://www.TestCatalog.com" xmlns:tns="http://www.TestCatalog.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="addProduct" type="tns:addProduct"/>
+
+  <xs:element name="addProductResponse" type="tns:addProductResponse"/>
+
+  <xs:element name="getCatalogCategories" type="tns:getCatalogCategories"/>
+
+  <xs:element name="getCatalogCategoriesResponse" type="tns:getCatalogCategoriesResponse"/>
+
+  <xs:element name="getProducts" type="tns:getProducts"/>
+
+  <xs:element name="getProductsResponse" type="tns:getProductsResponse"/>
+
+  <xs:element name="getProductsV2" type="tns:getProductsV2"/>
+
+  <xs:element name="getProductsV2Response" type="tns:getProductsV2Response"/>
+
+  <xs:complexType name="getProducts">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProductsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProductsV2">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProductsV2Response">
+    <xs:sequence>
+      <xs:element name="return" type="tns:product" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="product">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="price" type="xs:int"/>
+      <xs:element name="sku" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCatalogCategories">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCatalogCategoriesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addProduct">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addProductResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
